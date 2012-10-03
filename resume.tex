@@ -1,0 +1,179 @@
+% Significantly edited from its original form by Joseph Woodruff
+%
+% Template (C) 2004-2010 - Jason R. Blevins
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents. I do ask that you please leave
+% this notice and the above URL in the source code if you choose to
+% redistribute this file.
+
+\documentclass{article}
+\usepackage[ascii]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\title{Joseph Woodruff's Resume}
+
+\newcommand{\name}{Joseph Woodruff}
+
+\newcommand{\address}{13983 NW Grandview Place} 
+\newcommand{\city}{Banks}
+\newcommand{\state}{OR}
+\newcommand{\zip}{97106}
+
+\newcommand{\phone}{(503) 704-1329}
+
+\newcommand{\email}{sectoidman@gmail.com}
+
+\newcommand{\webpage}{http://github.com/sectoidman}
+
+\newcommand{\skills}{C, C++, Java, Bash, GNU C/C++ Compiler and Build System, Git, Mercurial, CMake, Linux, Linux System Administration}
+
+
+% Fedora, Redhat Enterprise Linux (RHEL), Ubuntu, Debian, SUSE, Intel Platform Open Cluster Stack, ROCKS Cluster, \LaTeX, Perl, Intel Compiler Suite, CVS, SVN, InstallShield, Cygwin, Virtualization
+% Server setup and administration: SAMBA, NFS, Apache, NTP, VNC, SSH
+% Virtualization Tools: VMware Server, Sun Microsystems Virtualbox
+
+\hypersetup{
+  	colorlinks = true,
+  	urlcolor = black,
+  	pdfauthor = {\name},
+  	pdfkeywords = {\name, \skills},
+	pdftitle = {\name's Resume},
+	pdfsubject = {\name},
+ 	pdfpagemode = UseNone
+}
+
+\geometry{
+	body={6.5in, 9.0in},
+	left=1.0in,
+	top=1.0in
+}
+
+% Customize page headers
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets and compact spacing
+\renewenvironment{itemize}{
+	\begin{list}{}{
+		\setlength{\leftmargin}{1.5em}
+		\setlength{\itemsep}{0.25em}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0.25em}
+	}
+}{
+	\end{list}
+}
+
+\begin{document}
+
+{\huge \name}
+
+\vspace{0.125in}
+
+\begin{minipage}[t]{0.5\textwidth}
+	\address\\
+	\city, \state\ \zip
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+	Mobile: \phone \\
+	Email: \texttt{\email} \\Github: \texttt{\url{\webpage}} \\
+\end{minipage}
+
+\begin{center}
+\line(1,0){465}
+\end{center}
+
+\section*{OBJECTIVE}
+	Seeking an entry-level position in software engineering or system administration.
+
+\section*{EDUCATION}
+	B.S., Computer Science, Portland State University, 2012
+
+
+\renewenvironment{itemize}{
+	\begin{list}{$\bullet$}{
+	\setlength{\leftmargin}{1.5em}
+	\setlength{\itemsep}{0.25em}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0.25em}
+}
+}{
+	\end{list}
+}
+
+\section*{EMPLOYMENT HISTORY}
+
+	\begin{minipage}[t]{0.5\textwidth}
+	\subsection*{BEC Internship}
+		Intel - Jones Farm Campus, Hillsboro, OR \\
+		Jul 2007 - Aug 2008 \\
+		Software Engineering Assistant
+
+		\begin{itemize}
+			\item Tested alpha/beta versions of Intel Compiler software on Linux.
+			\item Worked with compiler install team to identify and fix bugs.
+			\item Administered a computer lab containing 10-15 linux systems.
+			\item Set up a VMware server as part of a project to reduce lab overhead by
+				replacing physical machines with virtual ones.
+		\end{itemize}
+	\end{minipage}
+	\hspace{2 mm}
+	\begin{minipage}[t]{0.5\textwidth}
+	\subsection*{BEC Internship}
+		Intel - Jones Farm Campus, Hillsboro, OR \\
+		Sep 2005 - Sep 2006 \\
+		Software Engineering Assistant
+
+		\begin{itemize}
+			\item Tested patches/updates to mature versions of Intel Compiler software.
+			\item Researched install solutions for next-generation version of software.
+			\item Wrote shell scripts to generate archival copies of the Intel C/C++ and Fortran compilers.
+			\item Administered a computer lab containing 10-15 linux systems.
+		\end{itemize}
+	\end{minipage}
+
+
+\section*{SKILLS \& EXPERIENCE}
+	\skills
+
+
+\section*{EXTRACURRICULAR ACTIVITIES}
+	\begin{itemize}
+		\item Portland State Formula SAE Team, 2011 \& 2012 \\
+			-- \textit{Wireless Telemetry} (IEEE 802.15.4) \textit{and Data Acquisition.}
+		\item Intel LANFest Volunteer
+	\end{itemize}
+
+% Footer
+\begin{center}
+	\begin{small}
+		Last updated: \today
+	\end{small}
+\end{center}
+
+\end{document}
