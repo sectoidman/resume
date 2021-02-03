@@ -18,23 +18,29 @@
 \usepackage{hhline}
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{helvet}
+\usepackage{changepage,titlesec}
+\usepackage{fancyhdr}
 
-\title{Joseph Woodruff's Resume}
+\renewcommand{\familydefault}{\sfdefault}
 
 \newcommand{\name}{Joseph Woodruff}
 
-\newcommand{\address}{6831 Montauk Circle} 
-\newcommand{\city}{Lake Oswego}
-\newcommand{\state}{OR}
-\newcommand{\zip}{97035}
+\title{\name's Resume}
+
+\newcommand{\addressone}{21507 42nd Ave S}
+\newcommand{\addresstwo}{Apt C2}
+\newcommand{\city}{Seatac}
+\newcommand{\state}{WA}
+\newcommand{\zip}{98198}
 
 \newcommand{\phone}{(503) 704-1329}
 
-\newcommand{\email}{\href{mailto:sectoidman@gmail.com}{sectoidman@gmail.com}}
+\newcommand{\email}{\href{mailto:joseph.woodruff@a7m2.me}{joseph.woodruff@a7m2.me}}
 
-\newcommand{\webpage}{http://github.com/sectoidman}
+\newcommand{\webpage}{www.linkedin.com/in/jawoodru}
 
-\newcommand{\skills}{C, C++,  Bash, Git, Subversion, make, Matlab, Simulink, Linux, Python, DOORS, JIRA, Embedded Development, LynxOS-178, DO-178B/C }
+\newcommand{\skills}{C, C++,  Bash, Git, Subversion, make, Matlab, Simulink, Linux, Python, DOORS, JIRA, Embedded Development, LynxOS-178, DO-178B/C}
 
 
 % Fedora, Redhat Enterprise Linux (RHEL), Ubuntu, Debian, SUSE, Intel Platform Open Cluster Stack, ROCKS Cluster, \LaTeX, Perl, Intel Compiler Suite, CVS, SVN, InstallShield, Cygwin, Virtualization, Java, Linux System Administration, CMake, Mercurial, Avionics
@@ -42,131 +48,111 @@
 % Virtualization Tools: VMware Server, Sun Microsystems Virtualbox
 
 \hypersetup{
-  	colorlinks = true,
-  	urlcolor = black,
-  	pdfauthor = {\name},
-  	pdfkeywords = {\name, \skills},
-	pdftitle = {\name's Resume},
-	pdfsubject = {\name},
- 	pdfpagemode = UseNone
+        colorlinks = true,
+        urlcolor = black,
+        pdfauthor = {\name},
+        pdfkeywords = {\name, \skills},
+        pdftitle = {\name's Resume},
+        pdfsubject = {\name},
+        pdfpagemode = UseNone
 }
 
 \geometry{
-	body={6.5in, 9.0in},
-	left=1.0in,
-	top=1.0in
+        body={6.5in, 9.0in},
+        left=1.0in,
+        top=1.0in
 }
-
-% Customize page headers
-\pagestyle{myheadings}
-\markright{\name}
-\thispagestyle{empty}
-
-% Custom section fonts
-\usepackage{sectsty}
-\sectionfont{\rmfamily\mdseries\Large}
-\subsectionfont{\rmfamily\mdseries\itshape\large}
-
-% Other possible font commands include:
-% \ttfamily for teletype,
-% \sffamily for sans serif,
-% \bfseries for bold,
-% \scshape for small caps,
-% \normalsize, \large, \Large, \LARGE sizes.
 
 % Don't indent paragraphs.
 \setlength\parindent{0em}
 
-% Make lists without bullets and compact spacing
-\renewenvironment{itemize}{
-	\begin{list}{}{
-		\setlength{\leftmargin}{1.5em}
-		\setlength{\itemsep}{0.25em}
-		\setlength{\parskip}{0pt}
-		\setlength{\parsep}{0.25em}
-	}
-}{
-	\end{list}
+
+% Customize page headers
+\fancypagestyle{first}
+{
+    \fancyhf{}
+    \setlength{\headheight}{1.25in}
+    \renewcommand{\headrule}{\vspace{0.125in} \hrule}
+    \fancyhead[L]{
+        {\huge \name}\\
+        \vspace{0.125in}
+        \parbox{0.5\textwidth}{
+            \addressone\\
+            \addresstwo\\
+            \city, \state\ \zip
+        }
+    }
+    \fancyhead[R]{
+        \parbox{0.5\textwidth}{
+            Mobile: \phone \\
+            Email: \texttt{\email} \\
+            LinkedIn: \texttt{\url{\webpage}}
+        }
+    }
+    \fancyfoot{}
+    \cfoot{\center{\tiny{Last updated: \today}}}
 }
+
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\markright{\name}
+\thispagestyle{first}
+
+% formatting for the job descriptions
+\newenvironment{job_desc}
+    {
+        \newline
+        \begin{small}
+    }
+    {
+        \end{small}
+        \newline
+    }
+
 
 \begin{document}
 
-{\huge \name}
-
-\vspace{0.125in}
-
-\begin{minipage}[t]{0.5\textwidth}
-	\address\\
-	\city, \state\ \zip
-\end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
-	Mobile: \phone \\
-	Email: \texttt{\email} \\Github: \texttt{\url{\webpage}} \\
-\end{minipage}
-
-\begin{center}
-\line(1,0){465}
-\end{center}
-
-\section*{OBJECTIVE}
-	Seeking a position in embedded software development.
+\section*{SUMMARY}
+        Experienced Software Engineer specializing in safety-critical embedded software development with a focus on avionics and aerospace applications.
 
 \section*{EDUCATION}
-	B.S., Computer Science, Portland State University, 2012
-
-
-\renewenvironment{itemize}{
-	\begin{list}{$\bullet$}{
-	\setlength{\leftmargin}{1.5em}
-	\setlength{\itemsep}{0.25em}
-	\setlength{\parskip}{0pt}
-	\setlength{\parsep}{0.25em}
-}
-}{
-	\end{list}
-}
+        Bachelor of Science in Computer Science, Portland State University, 2012
 
 \section*{EMPLOYMENT HISTORY}
+    \begin{minipage}[t]{1\textwidth}
 
-	\begin{minipage}[t]{0.5\textwidth}
-	\subsection*{Rockwell Collins}
-		Heads-Up Guidance Systems - Wilsonville, OR \\
-		Mar 2013 - Oct 2017 \\
-		Software Engineer
+        \subsection*{Blue Origin}
+            New Shepard Software Architecture - Kent, WA \\
+            May 2019 - Present \\
+            Software Integration Engineer\\
+            \begin{job_desc}
+            Provided technical advice and schedule estimates to management stakeholders.
+            Incorporated software updates to different systems on the New Shepard propulsion module, wrote tests for
+            verifying that the software complies with system-level requirements, as well as creating and updating tools and supporting
+            infrastructure to streamline the testing process. Also provided back-room engineering support, troubleshooting software
+            problems and providing guidance to spacecraft flight controllers.
+            \end{job_desc}
 
-		\begin{itemize}
-			\item Implemented software updates in C and Matlab (Simulink) for heads-up displays featured on the Bombardier Q-400 and CSeries, Embraer E-Jets, Boeing 737 MAX and Novaer B-250.
-			\item Wrote low-level software requirements for the CSeries heads-up display based on system requirements.
-			\item Implemented DO-178B verification test cases in Python.
-			\item Worked with a team to develop and improve an internal test framework written in Python.
-			\item Worked with other engineering disciplines to troubleshoot and debug software issues based on internal test failures and customer reports. 
-		\end{itemize}
-	\end{minipage}
-	\hspace{2 mm}
-	\begin{minipage}[t]{0.5\textwidth}
-	\subsection*{BEC Internship}
-		Intel - Jones Farm Campus, Hillsboro, OR \\
-		Jul 2007 - Aug 2008 \\
-		Software Engineering Assistant
+        \subsection*{Aerotek}
+            Blue Origin, New Shepard Software Architecture - Kent, WA \\
+            November 2018 - May 2019 \\
+            Software Integration Engineer\\
+            \begin{job_desc}
+                Working on software integration and testing for the New Shepard spacecraft and associated equipment for Blue Origin, as a contract employee.
+            \end{job_desc}
 
-		\begin{itemize}
-			\item Tested alpha/beta versions of Intel Compiler software on Linux.
-			\item Worked with compiler install team to identify and fix bugs.
-			\item Administered a computer lab containing 10-15 linux systems.
-			\item Set up a VMware server as part of a project to reduce lab overhead by
-				replacing physical machines with virtual ones.
-		\end{itemize}
-	\end{minipage}
+        \subsection*{Rockwell Collins}
+            Head Up Guidance Systems - Wilsonville, OR \\
+            March 2013 - August 2018 \\
+            Software Engineer\\
+            \begin{job_desc}
+            Developing embedded avionics software for heads-up displays in compliance with a DO-178 B/C Software Assurance Level A process.
+            \end{job_desc}
+
+    \end{minipage}
 
 
-\section*{SKILLS \& EXPERIENCE}
-	\skills
-
-% Footer
-\begin{center}
-	\begin{small}
-		Last updated: \today
-	\end{small}
-\end{center}
+\section*{SKILLS}
+        \skills
 
 \end{document}
