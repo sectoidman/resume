@@ -22,14 +22,16 @@
 \usepackage{changepage,titlesec}
 \usepackage{fancyhdr}
 
+\titlespacing*{\section}{0pt}{0.75\baselineskip}{0.5\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0.25\baselineskip}
+
 \renewcommand{\familydefault}{\sfdefault}
 
 \newcommand{\name}{Joseph Woodruff}
 
 \title{\name's Resume}
 
-\newcommand{\addressone}{21507 42nd Ave S}
-\newcommand{\addresstwo}{Apt C2}
+\newcommand{\address}{21507 42nd Ave S Apt C2}
 \newcommand{\city}{Seatac}
 \newcommand{\state}{WA}
 \newcommand{\zip}{98198}
@@ -40,10 +42,10 @@
 
 \newcommand{\webpage}{www.linkedin.com/in/jawoodru}
 
-\newcommand{\skills}{C, C++,  Bash, Git, Subversion, make, Matlab, Simulink, Linux, Python, DOORS, JIRA, Embedded Development, LynxOS-178, DO-178B/C}
+\newcommand{\skills}{C, C++, Git, make, CMake, Matlab, Simulink, Linux, Python, DOORS, JIRA, Embedded Development, ThreadX, DO-178B/C, Board bring-up, Oscilloscope serial protocol troubleshooting}
 
 
-% Fedora, Redhat Enterprise Linux (RHEL), Ubuntu, Debian, SUSE, Intel Platform Open Cluster Stack, ROCKS Cluster, \LaTeX, Perl, Intel Compiler Suite, CVS, SVN, InstallShield, Cygwin, Virtualization, Java, Linux System Administration, CMake, Mercurial, Avionics
+% Fedora, Redhat Enterprise Linux (RHEL), Ubuntu, Debian, SUSE, Intel Platform Open Cluster Stack, ROCKS Cluster, \LaTeX, Perl, Intel Compiler Suite, CVS, SVN, InstallShield, Cygwin, Virtualization, Java, Linux System Administration, Mercurial, Avionics, LynxOS-178
 % Server setup and administration: SAMBA, NFS, Apache, NTP, VNC, SSH
 % Virtualization Tools: VMware Server, Sun Microsystems Virtualbox
 
@@ -71,14 +73,13 @@
 \fancypagestyle{first}
 {
     \fancyhf{}
-    \setlength{\headheight}{1.25in}
+    \setlength{\headheight}{1.0in}
     \renewcommand{\headrule}{\vspace{0.125in} \hrule}
     \fancyhead[L]{
         {\huge \name}\\
         \vspace{0.125in}
         \parbox{0.5\textwidth}{
-            \addressone\\
-            \addresstwo\\
+            \address\\
             \city, \state\ \zip
         }
     }
@@ -99,50 +100,80 @@
 % formatting for the job descriptions
 \newenvironment{job_desc}
     {
-        \newline
         \begin{small}
     }
     {
         \end{small}
-        \newline
     }
 
+\newenvironment{job_title}
+	{
+		\begin{small}
+		\bfseries	
+	}
+	{
+		\end{small}
+	}
 
 \begin{document}
 
 \section*{SUMMARY}
+		\small
         Experienced Software Engineer specializing in safety-critical embedded software development with a focus on avionics and aerospace applications.
-
+        
 \section*{EDUCATION}
+		\small
         Bachelor of Science in Computer Science, Portland State University, 2012
-
+        
 \section*{EMPLOYMENT HISTORY}
     \begin{minipage}[t]{1\textwidth}
 
         \subsection*{Blue Origin}
-            New Shepard Software Architecture - Kent, WA \\
-            May 2019 - Present \\
-            Software Integration Engineer\\
+        	\begin{job_title}
+            New Glenn Embedded Controllers - Kent, WA \\
+            March 2021 - July 2025 \\
+            Software Engineer\\
+        	\end{job_title}
             \begin{job_desc}
-            Provided technical advice and schedule estimates to management stakeholders.
+            Wrote drivers and middleware for a custom BLDC motor controller board intended for actuating throttle valves.
+            Contributed updates to upstream board support and math libraries in order to improve performance and take
+            full advantage of the FPU in the ARM processor on that motor controller. Worked with controls engineers to integrate
+            simulink model-generated code for the motor control algorithms and provided software support during controls
+            tuning and test operations. Between March 2021 and July 2021 time was split 50/50 between NG and NS programs.
+            \end{job_desc}
+            \newline
+            
+			\begin{job_title}
+            New Shepard Software Architecture - Kent, WA \\
+            May 2019 - July 2021 \\
+            Software Integration Engineer\\
+            \end{job_title}
+            \begin{job_desc}
             Incorporated software updates to different systems on the New Shepard propulsion module, wrote tests for
             verifying that the software complies with system-level requirements, as well as creating and updating tools and supporting
-            infrastructure to streamline the testing process. Also provided back-room engineering support, troubleshooting software
-            problems and providing guidance to spacecraft flight controllers.
+            infrastructure to streamline the testing process. Provided technical advice and schedule estimates to management stakeholders.
+            Provided engineering back-room support, troubleshooting software problems and providing guidance to spacecraft flight controllers
+            during flight operations.
             \end{job_desc}
+            \newline
 
         \subsection*{Aerotek}
+            \begin{job_title}
             Blue Origin, New Shepard Software Architecture - Kent, WA \\
             November 2018 - May 2019 \\
             Software Integration Engineer\\
+            \end{job_title}
             \begin{job_desc}
                 Working on software integration and testing for the New Shepard spacecraft and associated equipment for Blue Origin, as a contract employee.
             \end{job_desc}
+            \newline
 
         \subsection*{Rockwell Collins}
+        	\begin{job_title}
             Head Up Guidance Systems - Wilsonville, OR \\
             March 2013 - August 2018 \\
             Software Engineer\\
+            \end{job_title}
             \begin{job_desc}
             Developing embedded avionics software for heads-up displays in compliance with a DO-178 B/C Software Assurance Level A process.
             \end{job_desc}
